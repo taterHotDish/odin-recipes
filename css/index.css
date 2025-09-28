@@ -1,38 +1,22 @@
-/* Add extra vertical spacing between top-level list entries for all unordered lists.
-   Use the child combinator to avoid double-spacing on nested lists. */
-ul > li {
-    margin-bottom: 0.75rem; /* adjust this value to taste (0.5rem, 1rem, 12px...) */
-}
-
-/* Avoid extra space after the last item */
-ul > li:last-child {
-    margin-bottom: 0;
-}
-
-/* Tell user agents this site supports both light and dark color schemes.
-   Place this in a shared stylesheet so every page that links it inherits the
-   same preference without needing the meta tag in every HTML file. */
 :root {
-    color-scheme: light dark;
+  color-scheme: light dark;
+}
+body {
+  color: light-dark(#333333, #c0c0c0);
+  background-color: light-dark(#c0c0c0, #333333);
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 30px;
 }
 
-/* Example: set page colors based on the user's preference. Tweak variables
-   or properties below to match your design. */
-:root {
-    /* default (light) colors */
-    --bg: #ffffff;
-    --fg: #111827;
-}
+.box{ 
+    height: auto; 
+    width:  auto;
+    border: 1px solid; 
+} 
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg: #0b1220;
-        --fg: #e6edf3;
-    }
-}
-
-/* Apply the variables site-wide (simple example) */
-html, body {
-    background-color: var(--bg);
-    color: var(--fg);
+li {
+    margin-top: 5px;
+    
 }
